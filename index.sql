@@ -1,0 +1,14 @@
+1. SELECT * FROM GOALS WHERE beauty > 0.9 OR beauty < 0.1
+
+
+2. SELECT * FROM PLAYERS LEFT JOIN GOALS
+  ON PLAYERS.player_id = GOALS.player_id
+WHERE PLAYERS.team = 'FCB'
+ GROUP BY GOALS.player_id
+HAVING COUNT(GOALS.player_id) >= 1;
+
+3. 2. SELECT * FROM PLAYERS LEFT JOIN GOALS
+  ON PLAYERS.player_id = GOALS.player_id
+WHERE PLAYERS.team = 'FCB' AND PLAYERS.market_value < 0.8
+ GROUP BY GOALS.player_id
+HAVING COUNT(GOALS.player_id) >= 10;
