@@ -7,9 +7,7 @@ class WordFinder {
 
   longestWord(s) {
     if (s.length <= 12) {
-      this.dictionary.sort((a, b) => {
-        return b.length - a.length;
-      });
+      this.dictionary.sort((a, b) => b.length - a.length);
 
       function hasSubString(word, str) {
         let head = 0;
